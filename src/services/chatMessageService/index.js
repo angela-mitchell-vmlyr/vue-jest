@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-const messages = [{
+const _messages = [{
 
     id: v4(),
     sender:"M",
@@ -14,7 +14,7 @@ const messages = [{
     
 }];
 
-export const ChatMessageService = {
+export const ChatMessageService = (messages = _messages) => ({
     async getMessages(){
         
         return messages;
@@ -38,4 +38,4 @@ export const ChatMessageService = {
         }
 
     }
-}
+});
