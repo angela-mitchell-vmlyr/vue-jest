@@ -10,7 +10,7 @@
 
 <script>
 
-    import { ChatMessageService } from './services/chatMessageService.js';
+    import { ChatMessageService } from './services/chatMessageService/index.js';
 
     export default {
 
@@ -24,6 +24,7 @@
         },
         async mounted(){
 
+            console.log(ChatMessageService);
             const messages = await ChatMessageService.getMessages();
             this.$data.messages.push(... messages);
 
